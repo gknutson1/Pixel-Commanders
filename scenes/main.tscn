@@ -1,10 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://c0m5j761ku74o"]
+[gd_scene load_steps=10 format=3 uid="uid://c0m5j761ku74o"]
 
-[ext_resource type="Texture2D" uid="uid://q25n3p8w1cp8" path="res://KennyAssets/kenney_tiny-battle/Tilemap/tilemap.png" id="1_5cfmb"]
-[ext_resource type="Texture2D" uid="uid://uw5yhtwine6t" path="res://KennyAssets/kenney_input-prompts-pixel-16/Tilemap/tilemap.png" id="2_p7edm"]
+[ext_resource type="Texture2D" uid="uid://q25n3p8w1cp8" path="res://KennyAssets/kenney_tiny-battle/Tilemap/tilemap.png" id="1_c5gib"]
+[ext_resource type="Texture2D" uid="uid://uw5yhtwine6t" path="res://KennyAssets/kenney_input-prompts-pixel-16/Tilemap/tilemap.png" id="2_f17ri"]
+[ext_resource type="Script" path="res://scripts/Player.gd" id="3_3ysdi"]
+[ext_resource type="Texture2D" uid="uid://ytu8w77s11st" path="res://KennyAssets/kenney_tiny-battle/Tiles/tile_0079.png" id="4_hagld"]
+[ext_resource type="Texture2D" uid="uid://dowk0tbktpfho" path="res://KennyAssets/kenney_tiny-battle/Tiles/tile_0150.png" id="5_fp3pq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jpqyx"]
-texture = ExtResource("1_5cfmb")
+texture = ExtResource("1_c5gib")
 separation = Vector2i(1, 1)
 0:0/0 = 0
 1:0/0 = 0
@@ -209,7 +212,7 @@ separation = Vector2i(1, 1)
 sources/0 = SubResource("TileSetAtlasSource_jpqyx")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pux1h"]
-texture = ExtResource("2_p7edm")
+texture = ExtResource("2_f17ri")
 separation = Vector2i(1, 1)
 0:0/0 = 0
 1:0/0 = 0
@@ -1036,7 +1039,26 @@ sources/0 = SubResource("TileSetAtlasSource_pux1h")
 [node name="GroundTileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_mkr7e")
 format = 2
+layer_0/tile_data = PackedInt32Array(262156, 65536, 0, 262157, 65536, 0, 262158, 65536, 0, 262159, 524288, 9, 262160, 65536, 0, 327696, 65536, 0, 393232, 65536, 0, 393231, 1114112, 9, 393230, 65536, 0, 393229, 65536, 0, 393228, 65536, 0, 327692, 65536, 0, 327693, 65536, 0, 327694, 65536, 0, 327695, 65536, 0, 458764, 65536, 0, 458765, 65536, 0, 458766, 65536, 0, 458767, 65536, 0, 458768, 65536, 0, 458769, 65536, 0, 458770, 65536, 0, 393234, 65536, 0, 327698, 65536, 0, 262162, 65536, 0, 262161, 65536, 0, 327697, 65536, 0, 393233, 65536, 0, 458771, 65536, 0, 393235, 65536, 0, 327699, 65536, 0, 262163, 65536, 0, 393226, 131072, 8, 327690, 131072, 8, 327689, 393216, 5, 393225, 131072, 8, 393224, 131072, 8, 327688, 131072, 8, 327701, 131072, 8, 393237, 131072, 8, 393238, 131072, 8, 393239, 131072, 8, 327703, 131072, 8, 262167, 131072, 8, 262166, 131072, 8, 262165, 131072, 8, 327702, 131072, 8, 262154, 131072, 8, 262153, 131072, 8, 262152, 589824, 4, 196620, 65536, 0, 196621, 65536, 0, 196622, 65536, 0, 196623, 65536, 0, 196624, 65536, 0, 196625, 65536, 0, 196626, 65536, 0, 196627, 65536, 0, 327700, 262144, 7, 327691, 262144, 7, 327704, 1114112, 4, 327687, 1048576, 3)
+layer_1/name = ""
+layer_1/enabled = true
+layer_1/modulate = Color(1, 1, 1, 1)
+layer_1/y_sort_enabled = false
+layer_1/y_sort_origin = 0
+layer_1/z_index = 0
+layer_1/tile_data = PackedInt32Array(327693, 917504, 4, 393229, 917504, 4, 458766, 917504, 4)
 
 [node name="UiTileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_koo3k")
 format = 2
+
+[node name="Control" type="Node" parent="."]
+script = ExtResource("3_3ysdi")
+
+[node name="Tile0079" type="Sprite2D" parent="Control"]
+position = Vector2(40, 56)
+texture = ExtResource("4_hagld")
+
+[node name="Tile0150" type="Sprite2D" parent="Control"]
+position = Vector2(40, 40)
+texture = ExtResource("5_fp3pq")
