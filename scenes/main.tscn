@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://cbktkld3551mc"]
+[gd_scene load_steps=10 format=3 uid="uid://cbktkld3551mc"]
 
 [ext_resource type="Texture2D" uid="uid://uw5yhtwine6t" path="res://KennyAssets/kenney_input-prompts-pixel-16/Tilemap/tilemap.png" id="2_f17ri"]
 [ext_resource type="Texture2D" uid="uid://c07rqke3m73v7" path="res://KennyAssets/kenney_pixel-platformer/Tilemap/tilemap.png" id="2_w04f0"]
+[ext_resource type="Texture2D" uid="uid://4jlinrlvtk87" path="res://KennyAssets/kenney_pixel-platformer/Tilemap/tilemap-backgrounds.png" id="3_jwalv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pux1h"]
 texture = ExtResource("2_f17ri")
@@ -1014,6 +1015,38 @@ texture_region_size = Vector2i(18, 18)
 [sub_resource type="TileSet" id="TileSet_mu3yv"]
 sources/0 = SubResource("TileSetAtlasSource_1e8s7")
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_htqf8"]
+texture = ExtResource("3_jwalv")
+separation = Vector2i(1, 1)
+texture_region_size = Vector2i(24, 24)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_unhpi"]
+sources/0 = SubResource("TileSetAtlasSource_htqf8")
+
 [node name="Node2D" type="Node2D"]
 
 [node name="UiTileMap" type="TileMap" parent="."]
@@ -1022,4 +1055,8 @@ format = 2
 
 [node name="PlatformTileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_mu3yv")
+format = 2
+
+[node name="BackgroundTileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_unhpi")
 format = 2
